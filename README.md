@@ -134,4 +134,4 @@ Pada klasifikasi gambar kita menggunakan nilai accuracy sebagai metrik, kita men
 Sehingga diharapkan dengan model ini, pelajar dapat mengetahui apakah tulisan aksara Sunda yang ia tulis sudah tepat atau belum.
 
 ## References
-[1]Febriansyah, Feggy, et al. "Pengenalan Teknologi Android Game Edukasi Belajar Aksara Sunda untuk Meningkatkan Pengetahuan." JURIKOM (Jurnal Riset Komputer) 8.6 (2021): 336-344.
+[1]Kirmemis, Oznur, and Aysenur Birturk. "A content-based user model generation and optimization approach for movie recommendation." Workshop on ITWP. 2008.
