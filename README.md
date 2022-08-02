@@ -13,41 +13,45 @@ Personalisasi telah menjadi pendekatan yang kuat untuk membangun informasi yang 
 ## Data Understanding
 Data yang digunakan berasal dari https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata.
 Data Loading: jika kita melihat pada data tersebut terdapat 2 file yaitu movies dan credit dalam bentuk csv. 2 file tersebut kita *merge* tetapi, kita hanya membutuhkan beberapa kolom saja untuk model ini, yaitu *'movie_id','title','overview','genres','keywords','cast','crew'* lalu kita akan lihat 5 data teratas menggunakan *head(5)*
-movie_id	title	overview	genres	keywords	cast	crew
-0	19995	Avatar	In the 22nd century, a paraplegic Marine is di...	[{"id": 28, "name": "Action"}, {"id": 12, "nam...	[{"id": 1463, "name": "culture clash"}, {"id":...	[{"cast_id": 242, "character": "Jake Sully", "...	[{"credit_id": "52fe48009251416c750aca23", "de...
-1	285	Pirates of the Caribbean: At World's End	Captain Barbossa, long believed to be dead, ha...	[{"id": 12, "name": "Adventure"}, {"id": 14, "...	[{"id": 270, "name": "ocean"}, {"id": 726, "na...	[{"cast_id": 4, "character": "Captain Jack Spa...	[{"credit_id": "52fe4232c3a36847f800b579", "de...
-2	206647	Spectre	A cryptic message from Bond’s past sends him o...	[{"id": 28, "name": "Action"}, {"id": 12, "nam...	[{"id": 470, "name": "spy"}, {"id": 818, "name...	[{"cast_id": 1, "character": "James Bond", "cr...	[{"credit_id": "54805967c3a36829b5002c41", "de...
-3	49026	The Dark Knight Rises	Following the death of District Attorney Harve...	[{"id": 28, "name": "Action"}, {"id": 80, "nam...	[{"id": 849, "name": "dc comics"}, {"id": 853,...	[{"cast_id": 2, "character": "Bruce Wayne / Ba...	[{"credit_id": "52fe4781c3a36847f81398c3", "de...
-4	49529	John Carter	John Carter is a war-weary, former military ca...	[{"id": 28, "name": "Action"}, {"id": 12, "nam...	[{"id": 818, "name": "based on novel"}, {"id":...	[{"cast_id": 5, "character": "John Carter", "c...	[{"credit_id": "52fe479ac3a36847f813eaa3", "de...
 
+![data 5](https://user-images.githubusercontent.com/106476815/182332376-f1ce6827-381c-4abe-99a0-09643cab2030.jpg)
 
+Sebelum kita olah lebih lanjut, kita perlu memastikan apakah data yang kita punya tidak punya nilai kosong atau N/A.
 
+movie_id    0
+title       0
+overview    3
+genres      0
+keywords    0
+cast        0
+crew        0
+dtype: int64
 
-berikut adalah contoh gambar aksara sunda huruf ba yang akan kita ubah kedalam bentuk tensor supaya data dapat dikenali oleh model. Dengan kita mengubahnya kedalam tensor, kita juga dapat mengekstraksi fitur yang ada pada gambar.
+Jika kita lihat terdapat nilai kosong, pada kasus ini akan kita drop. Lalu kita cek kembali
 
-![gambar fitur](https://user-images.githubusercontent.com/106476815/181236794-5a64370f-263c-4633-a23f-a90f0d87b3db.png)
+movie_id    0
+title       0
+overview    0
+genres      0
+keywords    0
+cast        0
+crew        0
+dtype: int64
 
-((354, 354),
-array([[1., 1., 1., ..., 1., 1., 1.],
-
-[1., 1., 1., ..., 1., 1., 1.],
-        
-[1., 1., 1., ..., 1., 1., 1.],
-        
-...,
-        
-[1., 1., 1., ..., 1., 1., 1.],
-        
-[1., 1., 1., ..., 1., 1., 1.],
-        
-[1., 1., 1., ..., 1., 1., 1.]]))
-        
-Pada gambar awal, gambar berukuran 354x354 dan hitam putih. Fitur ekstrak ini menghasilkan sebuah angka dimana setiap angka merepresentasikan sebuah warna.
+Sekarang data kita sudah siap untuk diolah lebih lanjut.
 
 
 ## Data Preparation
+Jika kita perhatikan pada kolom *genres, keywords, cast,* dan juga *crew*, penulisan teks masih berantakan untuk itu kita harus merapikan terlebih dahulu. 
+Berikut adalah hasil setelah kolom-kolom tersebut dirapihkan teksnya.
 
-Data train / data latih akan digunakan untuk melatih model, sedangkan data test akan digunakan sebagai validation untuk model. Pada data train akan dilakukan normalisasi dengan membagi (rescale) semuanya dengan 1/255. Lalu gambar juga akan dilakukan augmentasi. Tetapi untuk data validation hanya dilakukan normalisasi saja. Lalu tiap data train dan validation akan diubah warnanya biar sama. Dengan ImageDataGenerator kita dapat memproduksi berbagai varisasi data tanpa memakan atau menggunakan 'space' penyimpanan kita, sehingga model dapat lebih belajar banyak variasi data, seperti foto pada gambar diperbesar, dibalik secara horizontal maupun vertikal, tetapi karena ini tulisan aksara kita tidak menggunakan flip karena artinya akan berbeda nanti.
+![setelah konversi teks](https://user-images.githubusercontent.com/106476815/182333610-478930a9-4dcd-48aa-bf14-739e02066e7f.jpg)
+
+Lalu kolom-kolom tersebut kita jadikan satu sehingga menjadi seperti gambar dibawah ini.
+
+![digabungkan dalam tags](https://user-images.githubusercontent.com/106476815/182333603-eb6d3a4a-ef58-4b1b-b9d8-7f8ba8e1f31a.jpg)
+
+Sampai sini, kita baru mengubah/mengkonversi teks pada kolom *tags* ke dalam sebuah token matriks. Pada kali ini kita menggunakan *CountVectorizer()*, setelah itu kita melakukan *fit_transform*
 
 
 ## Modeling
