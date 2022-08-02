@@ -73,6 +73,8 @@ Dengan cosine similarity, kita berhasil mengidentifikasi kesamaan antara satu fi
 
 ![model rekomen](https://user-images.githubusercontent.com/106476815/182336742-bc7a2f20-9436-4ad8-a105-b99ca8ada09f.jpg)
         
+
+## Evaluation
 Selanjutnya kita disini mencoba menemukan rekomendasi film yang mirip dengan *Pirates of the Caribbean: At World's End* dengan menjalankan kode berikut.
 
 recommend("Pirates of the Caribbean: At World's End")
@@ -81,19 +83,8 @@ Ketika dijalankan maka akan menghasilkan sebagai berikut.
 
 ![output](https://user-images.githubusercontent.com/106476815/182336747-f7d8eec5-fd32-42f2-a864-a56757e55b13.jpg)
 
-## Evaluation
+Dari hasil tersebut, *goals* yang kita inginkan sudah tercapai. Dapat dilihat juga, karena *Pirates of the Caribbean* sendiri mempunyai beberapa *sequel* film, sehingga tentu sistem/model akan merekomendasikan juga sekuel dari film tersebut.
 
-![acc](https://user-images.githubusercontent.com/106476815/181580647-3aa65748-9514-4764-9b2f-71c43ae9e660.png)
-![loss](https://user-images.githubusercontent.com/106476815/181580636-831aaab5-6d09-4519-a4c0-422c95f0db15.png)
-
-loss: 0.0179 - accuracy: 0.9944 - val_loss: 0.0032 - val_accuracy: 0.9988
-loss adalah nilai yang didapat dari hasil model melakukan training menggunakan data training sedangkan val_loss adalah nilai yang didapat dari hasil model menggunakan data validasi. Keduanya memiliki arti yang sama yaitu menilai seberapa buruk model memprediksi suatu hal, semakin baik model maka nilai loss dan val_loss akan bernilai makin kecil atau bahkan mendekati 0.  
-accuracy merupakan nilai dari hasil model yang dilatih menggunakan data latih, sedangkan val_accuracy merupakan nilai dari hasil model memprediksi sampel yang tidak ikut terlatih atau kita bisa sebut seberapa besar akurasi model jika digunakan pada kasus nyata.
-
-![metric](https://user-images.githubusercontent.com/106476815/181580642-909dc65a-b98c-4b11-afcb-7112a78aed4b.png)
-
-Pada klasifikasi gambar kita menggunakan nilai accuracy sebagai metrik, kita mendapatkan hasil yang tinggi. Jika kita lihat juga dari nilai accuracy dan val_accuracy yang hampir serupa bahkan mendekati 100%, dan juga nilai loss serta val_loss yang sama-sama mendekati 0, maka kita dapat katakan model ini sudah sangat baik dalam melakukan klasifikasi tulisan aksara Sunda.
-Sehingga diharapkan dengan model ini, pelajar dapat mengetahui apakah tulisan aksara Sunda yang ia tulis sudah tepat atau belum.
 
 ## References
 [1]Kirmemis, Oznur, and Aysenur Birturk. "A content-based user model generation and optimization approach for movie recommendation." Workshop on ITWP. 2008.
