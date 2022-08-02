@@ -51,12 +51,35 @@ Lalu kolom-kolom tersebut kita jadikan satu sehingga menjadi seperti gambar diba
 
 ![digabungkan dalam tags](https://user-images.githubusercontent.com/106476815/182333603-eb6d3a4a-ef58-4b1b-b9d8-7f8ba8e1f31a.jpg)
 
-Sampai sini, kita baru mengubah/mengkonversi teks pada kolom *tags* ke dalam sebuah token matriks. Pada kali ini kita menggunakan *CountVectorizer()*, setelah itu kita melakukan *fit_transform*
-
 
 ## Modeling
-Pada awal layer, kita menggunakan conv2D untuk membentuk lapisan konvolusi karena data yang kita masukkan berupa tensor 2 dimensi kita menggunakan aktivasi relu atau Rectified Linear Unit karena keuntungannya yaitu mempercepat proses konvergensi yang dilakukan dengan stochastic gradient descent jika dibandingkan dengan sigmoid / tanh dan padding agar semua memiliki ukuran yang sama, tidak lupa juga untuk lapisan pertama argumen input_shape, (112,112,1) karena gambar input kita memiliki ukuran 100x100 dan warna hanya hitam putih jadi kita menulisnya 100x100x1. Lalu kita menulis lapisan berikutnya seperti LeakyReLU, bisa dilakukan pemanggilan atau aktivasi layer lain, hasil ini diperoleh dari trial and error. Lalu MaxPooling2D untuk operasi pooling. Lalu GlobalMaxPool2D lalu Dense, pada akhir layer digunakan activation softmax karena klasifikasi yang kita lakukan lebih dari 2 dan output 18 karena kita mempunyai 18 kelas data. Untuk model digunakan optimasi Adam, karena label kita akan berupa one-hot-encoded, kita menggunakan categorical_crossentropy, lalu dengan metrik yang melakukan judge pada model melihat dari akurasi yang dihasilkan.
+Sampai sini, kita baru mengubah/mengkonversi teks pada kolom *tags* ke dalam sebuah token matriks. Pada kali ini kita menggunakan *CountVectorizer()*, setelah itu kita melakukan *fit_transform*, *fit_transform* merupakan kombinasi metode *fit()* dan *transform()* pada kumpulan data yang sama untuk transformasi dataset. Sekarang kita menggunakan teknik *cosine similarity* dari library sklearn. Kita coba plot hasilnya akan seperti berikut,
 
+array([[1.        , 0.08964215, 0.06071767, ..., 0.02519763, 0.0277885 ,
+        0.        ],
+       [0.08964215, 1.        , 0.06350006, ..., 0.02635231, 0.        ,
+        0.        ],
+       [0.06071767, 0.06350006, 1.        , ..., 0.02677398, 0.        ,
+        0.        ],
+       ...,
+       [0.02519763, 0.02635231, 0.02677398, ..., 1.        , 0.07352146,
+        0.04774099],
+       [0.0277885 , 0.        , 0.        , ..., 0.07352146, 1.        ,
+        0.05264981],
+       [0.        , 0.        , 0.        , ..., 0.04774099, 0.05264981,
+        1.        ]])
+        
+Dengan cosine similarity, kita berhasil mengidentifikasi kesamaan antara satu film dengan film lainnya. Nilai-nilai tersebut sangat beragam karena tags yang kita gunakan untuk kemiripan sangat beragam dan banyak. Lalu kita akan buat modelnya yang akan kita panggil untuk memberi rekomendasi dari film yang kita berikan, disini kita akan memberi 10 rekomendasi film.
+
+![model rekomen](https://user-images.githubusercontent.com/106476815/182336742-bc7a2f20-9436-4ad8-a105-b99ca8ada09f.jpg)
+        
+Selanjutnya kita disini mencoba menemukan rekomendasi film yang mirip dengan *Pirates of the Caribbean: At World's End* dengan menjalankan kode berikut.
+
+recommend("Pirates of the Caribbean: At World's End")
+
+Ketika dijalankan maka akan menghasilkan sebagai berikut.
+
+![output](https://user-images.githubusercontent.com/106476815/182336747-f7d8eec5-fd32-42f2-a864-a56757e55b13.jpg)
 
 ## Evaluation
 
