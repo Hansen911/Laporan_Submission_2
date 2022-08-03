@@ -14,6 +14,11 @@ Personalisasi telah menjadi pendekatan yang kuat untuk membangun informasi yang 
 Data yang digunakan berasal dari https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata.
 Data Loading: jika kita melihat pada data tersebut terdapat 2 file yaitu movies dan credit dalam bentuk csv. 2 file tersebut kita *merge*.
 
+![1](https://user-images.githubusercontent.com/106476815/182641398-d172a4c8-e1f3-49e2-b7a5-6a08a02491f7.jpg)
+
+![2](https://user-images.githubusercontent.com/106476815/182641374-7a3e3981-d4e0-473d-8e32-f8b17c4b2fc3.jpg)
+
+![3](https://user-images.githubusercontent.com/106476815/182641388-a816b50c-c6ec-4133-9097-0341b22081d7.jpg)
 
 Tetapi kita hanya membutuhkan beberapa kolom saja untuk model ini, yaitu *'movie_id','title','overview','genres','keywords','cast','crew'* lalu kita akan lihat 5 data teratas menggunakan *head(5)*
 
