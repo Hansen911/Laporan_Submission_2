@@ -84,7 +84,7 @@ Lalu kolom-kolom tersebut kita jadikan satu sehingga menjadi seperti gambar diba
 
 
 ## Modeling
-Sampai sini, kita baru mengubah/mengkonversi teks pada kolom *tags* ke dalam sebuah token matriks. Pada kali ini kita menggunakan *CountVectorizer()*, setelah itu kita melakukan *fit_transform*, *fit_transform* merupakan kombinasi metode *fit()* dan *transform()* pada kumpulan data yang sama untuk transformasi dataset. Sekarang kita menggunakan teknik *cosine similarity* dari library sklearn. Kita coba plot hasilnya akan seperti berikut,
+Sampai sini, kita baru mengubah/mengkonversi teks pada kolom *tags* ke dalam sebuah token matriks. Pada kali ini kita menggunakan *CountVectorizer()*, setelah itu kita melakukan *fit_transform*, *fit_transform* merupakan kombinasi metode *fit()* dan *transform()* pada kumpulan data yang sama untuk transformasi dataset. Sekarang kita menggunakan teknik *cosine similarity* dari library sklearn. Berikut adalah hasil yang didapatkan ketika kita mengaplikasikan teknik tersebut.
 
 array([[1.        , 0.08964215, 0.06071767, ..., 0.02519763, 0.0277885 ,
         0.        ],
