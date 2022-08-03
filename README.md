@@ -12,31 +12,20 @@ Personalisasi telah menjadi pendekatan yang kuat untuk membangun informasi yang 
 
 ## Data Understanding
 Data yang digunakan berasal dari https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata.
-Data Loading: jika kita melihat pada data tersebut terdapat 2 file yaitu movies dan credit dalam bentuk csv. 2 file tersebut kita *merge* tetapi, kita hanya membutuhkan beberapa kolom saja untuk model ini, yaitu *'movie_id','title','overview','genres','keywords','cast','crew'* lalu kita akan lihat 5 data teratas menggunakan *head(5)*
+Data Loading: jika kita melihat pada data tersebut terdapat 2 file yaitu movies dan credit dalam bentuk csv. 2 file tersebut kita *merge*.
+
+
+Tetapi kita hanya membutuhkan beberapa kolom saja untuk model ini, yaitu *'movie_id','title','overview','genres','keywords','cast','crew'* lalu kita akan lihat 5 data teratas menggunakan *head(5)*
 
 ![data 5](https://user-images.githubusercontent.com/106476815/182332376-f1ce6827-381c-4abe-99a0-09643cab2030.jpg)
 
 Sebelum kita olah lebih lanjut, kita perlu memastikan apakah data yang kita punya tidak punya nilai kosong atau N/A.
 
-movie_id    0
-title       0
-overview    3
-genres      0
-keywords    0
-cast        0
-crew        0
-dtype: int64
+![isna1](https://user-images.githubusercontent.com/106476815/182641391-fca7f091-86fb-4357-9480-be147b3a149e.jpg)
 
 Jika kita lihat terdapat nilai kosong, pada kasus ini akan kita drop. Lalu kita cek kembali
 
-movie_id    0
-title       0
-overview    0
-genres      0
-keywords    0
-cast        0
-crew        0
-dtype: int64
+![isna2](https://user-images.githubusercontent.com/106476815/182641396-d48b6da8-66f3-4481-8a50-dcf12cd15aa2.jpg)
 
 Sekarang data kita sudah siap untuk diolah lebih lanjut.
 
