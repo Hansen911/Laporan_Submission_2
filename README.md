@@ -20,29 +20,29 @@ Data Loading: jika kita melihat pada data tersebut terdapat 2 file yaitu movies 
 
 ![3](https://user-images.githubusercontent.com/106476815/182641388-a816b50c-c6ec-4133-9097-0341b22081d7.jpg)
 
-budget = uang yang dikeluarkan untuk melakukan produksi film.
-genres = kategori film
-homepage = website sebagai sumber data
-id = nomor identitas  
-keywords = kata kunci film 
-original_language = bahasa asli yang digunakan film
-original_title = judul asli film
-overview = narasi singkat film
-popularity = ketenaran film
-production_companies = perusahaan pembuat film 
-production_countries = tempat(negara) film dibuat
-release_date = tanggal film terbit
-revenue = penghasilan film
-runtime = durasi film
-spoken_languages = bahasa yang digunakan dalam film
-status = keadaan film seperti sudah terbit atau belum
-tagline = tulisan singkat mengenai ide film
-title = judul film
-vote_average = rata-rata suara dari hasil voting film
-vote_count = banyaknya suara dari hasil voting film
-movie_id = nomor identitas film
-cast = pemain film
-crew = sutradara film
+-budget = uang yang dikeluarkan untuk melakukan produksi film.
+-genres = kategori film
+-homepage = website sebagai sumber data
+-id = nomor identitas  
+-keywords = kata kunci film 
+-original_language = bahasa asli yang digunakan film
+-original_title = judul asli film
+-overview = narasi singkat film
+-popularity = ketenaran film
+-production_companies = perusahaan pembuat film 
+-production_countries = tempat(negara) film dibuat
+-release_date = tanggal film terbit
+-revenue = penghasilan film
+-runtime = durasi film
+-spoken_languages = bahasa yang digunakan dalam film
+-status = keadaan film seperti sudah terbit atau belum
+-tagline = tulisan singkat mengenai ide film
+-title = judul film
+-vote_average = rata-rata suara dari hasil voting film
+-vote_count = banyaknya suara dari hasil voting film
+-movie_id = nomor identitas film
+-cast = pemain film
+-crew = sutradara film
 
 Tetapi kita hanya membutuhkan beberapa kolom saja untuk model ini, yaitu *'movie_id','title','overview','genres','keywords','cast','crew'* lalu kita akan lihat 5 data teratas menggunakan *head(5)*
 
