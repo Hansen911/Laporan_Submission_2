@@ -100,7 +100,7 @@ array([[1.        , 0.08964215, 0.06071767, ..., 0.02519763, 0.0277885 ,
        [0.        , 0.        , 0.        , ..., 0.04774099, 0.05264981,
         1.        ]])
         
-Dengan cosine similarity, kita berhasil mengidentifikasi kesamaan antara satu film dengan film lainnya. Nilai-nilai tersebut sangat beragam karena tags yang kita gunakan untuk kemiripan sangat beragam dan banyak. Lalu kita akan buat modelnya yang akan kita panggil untuk memberi rekomendasi dari film yang kita berikan, disini kita akan memberi 10 rekomendasi film.
+Dengan *cosine similarity*, kita berhasil mengidentifikasi kesamaan antara satu film dengan film lainnya. Nilai-nilai tersebut sangat beragam karena tags yang kita gunakan untuk kemiripan sangat beragam dan banyak. Lalu kita akan buat modelnya yang akan kita panggil untuk memberi rekomendasi dari film yang kita berikan, disini kita akan memberi 10 rekomendasi film.
 
 ![model rekomen](https://user-images.githubusercontent.com/106476815/182336742-bc7a2f20-9436-4ad8-a105-b99ca8ada09f.jpg)
 
@@ -115,7 +115,11 @@ Ketika dijalankan maka akan menghasilkan sebagai berikut.
 Dari hasil tersebut, *goals* yang kita inginkan sudah tercapai. Dapat dilihat juga, karena *Pirates of the Caribbean* sendiri mempunyai beberapa *sequel* film, sehingga tentu sistem/model akan merekomendasikan juga sekuel dari film tersebut.
 
 ## Evaluation
+*cosine similarity* adalah metrik yang digunakan untuk mengukur seberapa mirip dua item. Secara matematis, ini mengukur kosinus sudut antara dua vektor yang diproyeksikan dalam ruang multidimensi. Nilai keluaran berkisar antara 0-1. 0 berarti tidak ada kesamaan, sedangkan 1 berarti kedua item 100% serupa.
 
+![yeay](https://user-images.githubusercontent.com/106476815/182657467-a0b94594-0ff7-4391-b6e2-0ffecd04c057.jpg)
+
+Diagonal dengan 1 menunjukkan, setiap film 'x' 100% mirip dengan dirinya sendiri! Kita ambil contoh seperti The Dark Knight Rises dengan Harry Potter and the Half-Blood Prince hanya memiliki kemiripan 0.380729, artinya mempunyai kesamaan sekitar 38%. Dengan begini, *goals* yang diinginkan sudah bisa kita raih.
 
 
 ## References
