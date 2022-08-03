@@ -60,6 +60,16 @@ Sekarang data kita sudah siap untuk diolah lebih lanjut.
 
 
 ## Data Preparation
+Kali ini kita akan mencoba untuk menelusuri beberapa kolom yang ada.
+
+![uuuuu](https://user-images.githubusercontent.com/106476815/182652468-45b1aebf-e6a2-45dc-a994-5f3ae05bdc2b.jpg)
+
+![uuuuuuu](https://user-images.githubusercontent.com/106476815/182652478-69de0d04-bc21-40ea-b51a-0c00dffc0e3e.jpg)
+
+![uuuuuuuuu](https://user-images.githubusercontent.com/106476815/182652480-9d2e4f25-edea-4cb8-b294-cf1c4df67ba7.jpg)
+
+![uuu](https://user-images.githubusercontent.com/106476815/182652484-3ae47733-a666-4484-8306-705785ed53d6.jpg)
+
 Jika kita perhatikan pada kolom *genres, keywords, cast,* dan juga *crew*, penulisan teks masih berantakan untuk itu kita harus merapikan terlebih dahulu. 
 Berikut adalah hasil setelah kolom-kolom tersebut dirapihkan teksnya.
 
