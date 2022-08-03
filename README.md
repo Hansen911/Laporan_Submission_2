@@ -62,13 +62,16 @@ Sekarang data kita sudah siap untuk diolah lebih lanjut.
 ## Data Preparation
 Kali ini kita akan mencoba untuk menelusuri beberapa kolom yang ada.
 
+![uuu](https://user-images.githubusercontent.com/106476815/182652484-3ae47733-a666-4484-8306-705785ed53d6.jpg)
+
 ![uuuuu](https://user-images.githubusercontent.com/106476815/182652468-45b1aebf-e6a2-45dc-a994-5f3ae05bdc2b.jpg)
 
 ![uuuuuuu](https://user-images.githubusercontent.com/106476815/182652478-69de0d04-bc21-40ea-b51a-0c00dffc0e3e.jpg)
 
+Kita juga dapat mencoba untuk melihat film-film apa saja yang dimainkan oleh seorang Johnny Depp.
+
 ![uuuuuuuuu](https://user-images.githubusercontent.com/106476815/182652480-9d2e4f25-edea-4cb8-b294-cf1c4df67ba7.jpg)
 
-![uuu](https://user-images.githubusercontent.com/106476815/182652484-3ae47733-a666-4484-8306-705785ed53d6.jpg)
 
 Jika kita perhatikan pada kolom *genres, keywords, cast,* dan juga *crew*, penulisan teks masih berantakan untuk itu kita harus merapikan terlebih dahulu. 
 Berikut adalah hasil setelah kolom-kolom tersebut dirapihkan teksnya.
@@ -100,9 +103,7 @@ array([[1.        , 0.08964215, 0.06071767, ..., 0.02519763, 0.0277885 ,
 Dengan cosine similarity, kita berhasil mengidentifikasi kesamaan antara satu film dengan film lainnya. Nilai-nilai tersebut sangat beragam karena tags yang kita gunakan untuk kemiripan sangat beragam dan banyak. Lalu kita akan buat modelnya yang akan kita panggil untuk memberi rekomendasi dari film yang kita berikan, disini kita akan memberi 10 rekomendasi film.
 
 ![model rekomen](https://user-images.githubusercontent.com/106476815/182336742-bc7a2f20-9436-4ad8-a105-b99ca8ada09f.jpg)
-        
 
-## Evaluation
 Selanjutnya kita disini mencoba menemukan rekomendasi film yang mirip dengan *Pirates of the Caribbean: At World's End* dengan menjalankan kode berikut.
 
 recommend("Pirates of the Caribbean: At World's End")
@@ -112,6 +113,9 @@ Ketika dijalankan maka akan menghasilkan sebagai berikut.
 ![output](https://user-images.githubusercontent.com/106476815/182336747-f7d8eec5-fd32-42f2-a864-a56757e55b13.jpg)
 
 Dari hasil tersebut, *goals* yang kita inginkan sudah tercapai. Dapat dilihat juga, karena *Pirates of the Caribbean* sendiri mempunyai beberapa *sequel* film, sehingga tentu sistem/model akan merekomendasikan juga sekuel dari film tersebut.
+
+## Evaluation
+
 
 
 ## References
